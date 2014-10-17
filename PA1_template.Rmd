@@ -17,7 +17,7 @@ colnames(total_number_steps)<-c("date","total_number_steps")
 
 1.histogram of the total number of steps taken each day
 
-```{r, fig.height=4}
+```{r histogram.png, fig.height=4,echo=T}
 hist(total_number_steps$total_number_steps,main='Total number of steps taken each day',xlab='total number of steps taken each day',col='blue')
 ```
 
@@ -30,10 +30,10 @@ median(total_number_steps$total_number_steps,na.rm=T)
 ###What is the average daily activity pattern?
 
 
-1.  Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) 
+1.	Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) 
 and the average number of steps taken, averaged across all days (y-axis)
 
-```{r,echo=TRUE,fig.width=7} 
+```{r timeserie.png,echo=TRUE,fig.width=7} 
 average_number_steps<-aggregate(data$steps,by=list(data$interval),mean,na.rm=T)
 colnames(average_number_steps)<-c("interval","average_number_steps")
 plot( average_number_steps,type='l',col='red', main="Average number of steps taken")
@@ -86,7 +86,7 @@ for that day, or the mean for that 5-minute interval, etc.
 total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? 
 What is the impact of imputing missing data on the estimates of the total daily number of steps? 
   
-```{r,echo=TRUE} 
+```{r imputedhistogram.png,echo=TRUE} 
    number_steps<-aggregate(steps~date,data=newdata,sum,na.rm=T)
     hist(number_steps$steps,main = "Total steps taken a day", xlab = "day", col = "green")
 ```
@@ -118,7 +118,7 @@ and the average number of steps taken, averaged across all weekday days or weeke
 The plot should look something like the following, which was creating using simulated data:
             
             
-```{r,echo=TRUE}
+```{r timeserieweek.png,echo=TRUE}
 library(lattice)
 average_steps<-aggregate(steps~interval+datetype,data=newdata,mean,na.rm=T)
 xyplot(steps~interval | datetype,data=average_steps, type='l', layout=c(1,2))
