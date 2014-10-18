@@ -20,7 +20,7 @@ colnames(total_number_steps)<-c("date","total_number_steps")
 hist(total_number_steps$total_number_steps,main='Total number of steps taken each day',xlab='total number of steps taken each day',col='blue')
 ```
 
-![plot of chunk histogram.png](figure/histogram.png-1.png) 
+![plot of chunk histogram](figure/histogram.png) 
 
 2.Calculate the mean and median
 
@@ -53,7 +53,7 @@ colnames(average_number_steps)<-c("interval","average_number_steps")
 plot( average_number_steps,type='l',col='red', main="Average number of steps taken")
 ```
 
-![plot of chunk timeserie.png](figure/timeserie.png-1.png) 
+![plot of chunk timeserie](figure/timeserie.png) 
 
 
 2.Which 5-minute interval, on average across all the days in the dataset, 
@@ -120,7 +120,7 @@ What is the impact of imputing missing data on the estimates of the total daily 
     hist(number_steps$steps,main = "Total steps taken a day", xlab = "day", col = "green")
 ```
 
-![plot of chunk imputedhistogram.png](figure/imputedhistogram.png-1.png) 
+![plot of chunk imputedhistogram](figure/imputedhistogram.png) 
      
 
 ```r
@@ -168,5 +168,5 @@ average_steps<-aggregate(steps~interval+datetype,data=newdata,mean,na.rm=T)
 xyplot(steps~interval | datetype,data=average_steps, type='l', layout=c(1,2))
 ```
 
-![plot of chunk timeserieweek.png](figure/timeserieweek.png-1.png) 
+![plot of chunk timeserieweek](figure/timeserieweek.png) 
          
