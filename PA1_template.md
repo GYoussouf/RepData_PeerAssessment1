@@ -53,7 +53,7 @@ colnames(average_number_steps)<-c("interval","average_number_steps")
 plot( average_number_steps,type='l',col='red', main="Average number of steps taken")
 ```
 
-![plot of chunk timeserie](figure/timeserie.png) 
+![plot of chunk timeserie](figure/timeseries.png) 
 
 
 2.Which 5-minute interval, on average across all the days in the dataset, 
@@ -120,7 +120,7 @@ What is the impact of imputing missing data on the estimates of the total daily 
     hist(number_steps$steps,main = "Total steps taken a day", xlab = "day", col = "green")
 ```
 
-![plot of chunk imputedhistogram](figure/imputedhistogram.png) 
+![plot of chunk imputedhistogram](figure/histogrammissing.png) 
      
 
 ```r
